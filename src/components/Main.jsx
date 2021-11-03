@@ -20,7 +20,7 @@ import About from "./About";
 import Contact from "./Contact";
 import SimpleMediaQuery from "./SimpleMediaQuery";
 import Home from "./Home";
-import FixedBottomNavigation from "./FixedBottomNavigation";
+import Navigation from "./Navigation";
 import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useState, useEffect, useRef } from "react";
@@ -63,41 +63,40 @@ export default function Main(props) {
         sx={{
           // p: 1,
           // bgcolor: "background.default",
-          bgcolor: "#FFF",
+          // bgcolor: "#FFF",
+          background:
+            "-webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 34, 255, 0.6), rgba(0, 0, 0, 0.8))",
           width: "100%",
-          // height: "100vh",
+          height: "100vh",
+          // backgroundColor: "rgba(0, 0, 0, 0.5)",
         }}
         ref={ref}>
-        {/* <CssBaseline /> */}
-        {/* <Switch> */}
-
-        {/* <FixedBottomNavigation /> */}
-        <Grid
+        <CssBaseline />
+        {/* <Grid
           container
           rowSpacing={2}
           columnSpacing={{ xs: 1, sm: 2, md: 3 }}
           direction="column"
           justifyContent="center"
-          alignItems="center">
-          <Route exact path="/">
-            <About theme={theme} />
-            <FixedBottomNavigation />
-          </Route>
-          <Route path="/about">
-            <About theme={theme} />
-            <FixedBottomNavigation />
-          </Route>
-          <Route path="/portfolio">
-            {/* <SimpleMediaQuery></SimpleMediaQuery> */}
-            <Portfolio theme={theme} />
-            <FixedBottomNavigation />
-          </Route>
-          <Route path="/contact">
-            <Contact theme={theme} />
-            <FixedBottomNavigation />
-          </Route>
-          {/* </Switch> */}
-        </Grid>
+          alignItems="center"> */}
+        <Route exact path="/">
+          <About theme={theme} mobile={mobile} />
+          <Navigation mobile={mobile} />
+        </Route>
+        <Route path="/about">
+          <About theme={theme} mobile={mobile} />
+          <Navigation mobile={mobile} />
+        </Route>
+        <Route path="/portfolio">
+          <Portfolio theme={theme} />
+          <Navigation mobile={mobile} />
+        </Route>
+        <Route path="/contact">
+          <Contact theme={theme} />
+          <Navigation mobile={mobile} />
+        </Route>
+        {/* </Switch> */}
+        {/* </Grid> */}
       </Box>
       {/* </ThemeProvider> */}
     </Router>
