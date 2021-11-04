@@ -7,6 +7,7 @@ import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 import { motion } from "framer-motion";
 import { useHistory } from "react-router-dom";
+import DesktopNavigation from "./DesktopNavigation";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -35,8 +36,10 @@ export default function About(props) {
   const styles = {
     header: {
       // backgroundImage: `url(${background})`,
-      background: `-webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0)), url(${background})`,
-      width: "100%",
+      // background: `-webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0)), url(${background})`,
+      background: `-webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(0, 34, 255, 0.6), rgba(0, 0, 0, 0.8)), url(${background})`,
+      backgroundImage: `url(${background})`,
+      width: "100vw",
       height: "100vh",
       // backgroundColor: "rgba(0, 0, 0, 1)",
       backgroundOpacity: 0.5,
@@ -60,7 +63,8 @@ export default function About(props) {
 
     content: {
       // textShadow: "white 0px 0px 10px",
-      background: "rgba(33, 33, 33, .7)",
+      background: "rgba(33, 33, 33, .8)",
+      color: "white",
       marginBottom: "5px",
       padding: "10px",
       borderRadius: "10px",
@@ -82,13 +86,13 @@ export default function About(props) {
           exit="exit"> */}
         <motion.div
           animate={{ opacity: [0, 1, 1], y: [150, 0] }}
-          transition={{ ease: "easeOut", duration: 2 }}
+          transition={{ ease: "easeOut", duration: 1 }}
           style={styles.content}>
           Hi there!
         </motion.div>
         <motion.div
           animate={{ opacity: [0, 1], y: [150, 0] }}
-          transition={{ ease: "easeOut", duration: 3 }}
+          transition={{ ease: "easeOut", duration: 2 }}
           style={styles.content}>
           My name is Elisha Avior.
         </motion.div>
@@ -101,11 +105,18 @@ export default function About(props) {
         </motion.div> */}
         <motion.div
           animate={{ opacity: [0, 1], y: [250, 0] }}
-          transition={{ ease: "easeOut", duration: 5 }}
+          transition={{ ease: "easeOut", duration: 3 }}
           style={styles.content}>
           As a FULL STACK DEVELOPER, I create websites and web applications,
           using HTML, CSS, Javascript, React, NextJS and NodeJS.
         </motion.div>
+        {!mobile && (
+          <motion.div
+            animate={{ opacity: [0, 1] }}
+            transition={{ ease: "easeOut", duration: 7 }}>
+            <DesktopNavigation indicator={"about"} />
+          </motion.div>
+        )}
         {/* </motion.div> */}
       </div>
 

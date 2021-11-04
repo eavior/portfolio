@@ -8,6 +8,7 @@ import ListItemAvatar from "@mui/material/ListItemAvatar";
 import ListItemText from "@mui/material/ListItemText";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
+import ProjectCard from "./ProjectCard";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -22,9 +23,12 @@ function Portfolio() {
       <Box
         sx={{
           flexGrow: 1,
-          height: "100%",
-          background:
-            "-webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 34, 255, 0.6), rgba(0, 0, 0, 0.8))",
+          // backgroundImage: `-webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(0, 34, 255, 0.6), rgba(0, 0, 0, 0.8))`,
+          // backgroundRepeat: "no-repeat",
+          width: "100%",
+          height: "80vh",
+          bottom: 0,
+          alignItems: "center",
         }}>
         <Grid
           container
@@ -38,7 +42,7 @@ function Portfolio() {
             //   <ListItemText primary={project} secondary={technologies} />
             // </ListItem>
             <Grid item>
-              <ActionAreaCard
+              <ProjectCard
                 key={index + image}
                 project={project}
                 technologies={technologies}

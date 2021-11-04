@@ -20,10 +20,11 @@ import About from "./About";
 import Contact from "./Contact";
 import SimpleMediaQuery from "./SimpleMediaQuery";
 import Home from "./Home";
-import Navigation from "./Navigation";
+import FixedBottomNavigation from "./FixedBottomNavigation";
 import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useState, useEffect, useRef } from "react";
+import DesktopNavigation from "./DesktopNavigation";
 
 // https://mui.com/customization/default-theme/?expand-path=$.palette
 const darkTheme = createTheme({ palette: { mode: "dark" } });
@@ -40,7 +41,7 @@ export default function Main(props) {
     // setMobile(matches);
     console.log(mobile);
 
-    ref.current.ownerDocument.body.scrollTop = 0;
+    // ref.current.ownerDocument.body.scrollTop = 0;
   }, [value]);
 
   // function SimpleMediaQuery() {
@@ -64,14 +65,14 @@ export default function Main(props) {
           // p: 1,
           // bgcolor: "background.default",
           // bgcolor: "#FFF",
-          background:
-            "-webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 34, 255, 0.6), rgba(0, 0, 0, 0.8))",
+          // background:
+          //   "-webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 34, 255, 0.6), rgba(0, 0, 0, 0.8))",
           width: "100%",
-          height: "100vh",
+          height: "100%",
           // backgroundColor: "rgba(0, 0, 0, 0.5)",
         }}
         ref={ref}>
-        <CssBaseline />
+        {/* <CssBaseline /> */}
         {/* <Grid
           container
           rowSpacing={2}
@@ -81,19 +82,23 @@ export default function Main(props) {
           alignItems="center"> */}
         <Route exact path="/">
           <About theme={theme} mobile={mobile} />
-          <Navigation mobile={mobile} />
+          {mobile && <FixedBottomNavigation />}
+          {/* {!mobile && <DesktopNavigation />} */}
         </Route>
         <Route path="/about">
           <About theme={theme} mobile={mobile} />
-          <Navigation mobile={mobile} />
+          {mobile && <FixedBottomNavigation />}
+          {/* {!mobile && <DesktopNavigation />} */}
         </Route>
         <Route path="/portfolio">
           <Portfolio theme={theme} />
-          <Navigation mobile={mobile} />
+          {mobile && <FixedBottomNavigation />}
+          {!mobile && <DesktopNavigation indicator={"portfolio"} />}
         </Route>
         <Route path="/contact">
           <Contact theme={theme} />
-          <Navigation mobile={mobile} />
+          {mobile && <FixedBottomNavigation />}
+          {!mobile && <DesktopNavigation indicator={"contact"} />}
         </Route>
         {/* </Switch> */}
         {/* </Grid> */}
