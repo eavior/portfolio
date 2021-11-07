@@ -26,7 +26,7 @@ const Projects = [
   {
     id: 3,
     project: "Tweet app",
-    technologies: "React",
+    technologies: "React, Bootstrap",
     description: "A basic tweet app.",
     image: "../project-itc-tweet-app.png",
     githubFrontend:
@@ -37,7 +37,7 @@ const Projects = [
   {
     id: 4,
     project: "Note app",
-    technologies: "React",
+    technologies: "React, Bootstrap",
     description: "A basic note app.",
     image: "../project-notes.png",
     githubFrontend: "https://github.com/eavior/itc-react-note-app",
@@ -47,7 +47,7 @@ const Projects = [
   {
     id: 5,
     project: "Fibonacci calculator",
-    technologies: "HTML, CSS and Javascript",
+    technologies: "HTML, CSS, Bootstrap and Javascript",
     description: "This app returns the fibonacci number.",
     image: "../project-fibonacci.png",
     githubFrontend: "https://github.com/eavior/itc-js-fibonacci",
@@ -56,12 +56,12 @@ const Projects = [
   },
   {
     id: 6,
-    project: "Portfolio app",
+    project: "Portfolio site",
     technologies: "React and MUI",
     description:
       "Last but not least, this portfolio site. A responsive portfolio web application.",
     image: "../project-portfolio.png",
-    githubFrontend: "https://github.com/eavior/itc-js-fibonacci",
+    githubFrontend: "https://github.com/eavior/portfolio",
     githubBackend: "",
     deployment: "",
   },
