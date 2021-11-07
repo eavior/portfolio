@@ -19,7 +19,7 @@ import DesktopNavigation from "./DesktopNavigation";
 // const darkTheme = createTheme({ palette: { mode: "dark" } });
 // const lightTheme = createTheme({ palette: { mode: "light" } });
 
-const background = "../elisha-avior.png";
+const background = "../elisha-avior2.png";
 
 export default function About(props) {
   const { mobile } = props;
@@ -89,13 +89,7 @@ export default function About(props) {
           As a FULL STACK DEVELOPER, I create websites and web applications,
           using HTML, CSS, Javascript, React and NodeJS.
         </motion.div>
-        {!mobile && (
-          <motion.div
-            animate={{ opacity: [0, 1] }}
-            transition={{ ease: "easeOut", duration: 7 }}>
-            <DesktopNavigation indicator={"about"} />
-          </motion.div>
-        )}
+        {!mobile && <DesktopNavigation indicator={"about"} />}
       </div>
     </>
     // </ThemeProvider>

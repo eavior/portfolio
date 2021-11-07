@@ -10,6 +10,7 @@ import ContactPageIcon from "@mui/icons-material/ContactPage";
 import { withStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { motion } from "framer-motion";
 
 export default function DesktopNavigation(props) {
   const { indicator } = props;
@@ -71,9 +72,9 @@ export default function DesktopNavigation(props) {
   };
 
   return (
-    <div
-    // sx={{ alignItems: "center" }}
-    >
+    <motion.div
+      animate={{ opacity: [0, 1] }}
+      transition={{ ease: "easeOut", duration: 7 }}>
       <StyledTabs
         style={styles.navigation}
         value={value}
@@ -107,6 +108,6 @@ export default function DesktopNavigation(props) {
           label="Contact"
         />
       </StyledTabs>
-    </div>
+    </motion.div>
   );
 }
