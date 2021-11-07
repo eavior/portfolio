@@ -1,5 +1,6 @@
 const Projects = [
   {
+    id: 1,
     project: "Home automation (Sensibo remote control)",
     technologies:
       "React, MUI and NodeJS with Express (+ alternative backend server with Django and Python)",
@@ -12,6 +13,7 @@ const Projects = [
     deployment: "https://home-automation-app.netlify.app/",
   },
   {
+    id: 2,
     project: "Pet adoption site",
     technologies: "React, Bootstrap, NodeJS with Express and MySQL ",
     description:
@@ -22,6 +24,7 @@ const Projects = [
     deployment: "https://pet-adoption-eavior.herokuapp.com/",
   },
   {
+    id: 3,
     project: "Tweet app",
     technologies: "React",
     description: "A basic tweet app.",
@@ -32,6 +35,7 @@ const Projects = [
     deployment: "",
   },
   {
+    id: 4,
     project: "Note app",
     technologies: "React",
     description: "A basic note app.",
@@ -41,6 +45,7 @@ const Projects = [
     deployment: "",
   },
   {
+    id: 5,
     project: "Fibonacci calculator",
     technologies: "HTML, CSS and Javascript",
     description: "This app returns the fibonacci number.",
@@ -50,6 +55,7 @@ const Projects = [
     deployment: "",
   },
   {
+    id: 6,
     project: "Portfolio app",
     technologies: "React and MUI",
     description:

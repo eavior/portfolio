@@ -14,8 +14,6 @@ function App() {
   );
   const isMobile = mobilePortrait || mobileLandscape;
 
-  console.log(isMobile);
-
   return (
     <div className="App">
       <header className="App-header">

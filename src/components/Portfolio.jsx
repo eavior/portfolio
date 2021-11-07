@@ -33,24 +33,22 @@ function Portfolio() {
           direction="row"
           justifyContent="space-around">
           {Projects.map(
-            (
-              {
-                project,
-                description,
-                technologies,
-                image,
-                githubFrontend,
-                githubBackend,
-                deployment,
-              },
-              index
-            ) => (
+            ({
+              id,
+              project,
+              description,
+              technologies,
+              image,
+              githubFrontend,
+              githubBackend,
+              deployment,
+            }) => (
               // <ListItem button key={index + image}>
               //   <ListItemText primary={project} secondary={technologies} />
               // </ListItem>
-              <Grid item>
+              <Grid item key={id}>
                 <ProjectCard
-                  key={index + image}
+                  key={id}
                   project={project}
                   description={description}
                   technologies={technologies}

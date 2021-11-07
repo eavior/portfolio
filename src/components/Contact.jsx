@@ -21,7 +21,7 @@ function Contact() {
         spacing={4}
         m={2}>
         <Button
-          fullWidth="false"
+          fullWidth
           variant="outlined"
           size="large"
           startIcon={<EmailIcon />}
@@ -31,7 +31,7 @@ function Contact() {
           Email
         </Button>
         <Button
-          fullWidth="false"
+          fullWidth
           variant="outlined"
           size="large"
           startIcon={<LocalPhoneIcon />}
@@ -39,14 +39,14 @@ function Contact() {
           Phone
         </Button>
         {/* <Button
-          fullWidth="false"
+          fullWidth
           variant="outlined"
           size="large"
           startIcon={<WhatsAppIcon />}>
           Whatsapp
         </Button> */}
         <Button
-          fullWidth="false"
+          fullWidth
           variant="outlined"
           size="large"
           startIcon={<LinkedInIcon />}
@@ -54,7 +54,7 @@ function Contact() {
           LinkedIn
         </Button>
         <Button
-          fullWidth="false"
+          fullWidth
           variant="outlined"
           size="large"
           startIcon={<GitHubIcon />}
