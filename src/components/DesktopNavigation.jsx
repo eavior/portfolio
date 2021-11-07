@@ -29,14 +29,19 @@ export default function DesktopNavigation(props) {
   const styles = {
     navigation: {
       position: "fixed",
-      top: indicator === "portfolio" ? "5%" : "50%",
+      top: indicator === "about" ? "50%" : "5%",
       right: matches && indicator === "about" ? "null" : 0,
-      left: matches && indicator === "about" ? 0 : null,
-      left: indicator === "portfolio" ? "50%" : null,
+      left:
+        matches && indicator === "about"
+          ? "12%"
+          : !matches && indicator === "about"
+          ? null
+          : "50%",
       transform: "translate(-50%, -50%)",
-      textAlign: "right",
-      marginRight: "1.5vw",
-      marginLeft: "4em",
+      // textAlign: "right",
+      // marginRight: "1.5vw",
+      // marginLeft: "4em",
+      width: "fit-content",
       color: "white",
       background: "rgba(33, 33, 33, .8)",
       marginBottom: "5px",
@@ -58,19 +63,22 @@ export default function DesktopNavigation(props) {
       // paddingLeft: "0vw",
     },
     tab: {
-      marginTop: "2em",
-      marginBottom: "2em",
+      // marginTop: "2em",
+      // marginBottom: "2em",
+      margin: indicator === "about" ? "2em 0 2em 0" : "0",
       color: "white",
     },
   };
 
   return (
-    <div sx={{ alignItems: "end" }}>
+    <div
+    // sx={{ alignItems: "center" }}
+    >
       <StyledTabs
         style={styles.navigation}
         value={value}
         onChange={handleChange}
-        orientation={indicator === "portfolio" ? "horizontal" : "vertical"}
+        orientation={indicator === "about" ? "vertical" : "horizontal"}
         variant="scrollable"
         indicatorColor="primary"
         aria-label="icon label tabs example">

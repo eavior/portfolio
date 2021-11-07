@@ -1,14 +1,9 @@
-import ActionAreaCard from "./ActionAreaCard";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
-import ListItemText from "@mui/material/ListItemText";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import ProjectCard from "./ProjectCard";
+import Projects from "./Projects";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -26,8 +21,8 @@ function Portfolio() {
           // backgroundImage: `-webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(0, 34, 255, 0.6), rgba(0, 0, 0, 0.8))`,
           // backgroundRepeat: "no-repeat",
           width: "100%",
-          height: "80vh",
-          bottom: 0,
+          // height: "80vh",
+          padding: "5em 0 5em 0",
           alignItems: "center",
         }}>
         <Grid
@@ -37,80 +32,40 @@ function Portfolio() {
           columnSpacing={{ xs: 1, sm: 2, md: 3 }}
           direction="row"
           justifyContent="space-around">
-          {projects.map(({ project, technologies, image }, index) => (
-            // <ListItem button key={index + image}>
-            //   <ListItemText primary={project} secondary={technologies} />
-            // </ListItem>
-            <Grid item>
-              <ProjectCard
-                key={index + image}
-                project={project}
-                technologies={technologies}
-                image={image}
-              />
-            </Grid>
-          ))}
+          {Projects.map(
+            (
+              {
+                project,
+                description,
+                technologies,
+                image,
+                githubFrontend,
+                githubBackend,
+                deployment,
+              },
+              index
+            ) => (
+              // <ListItem button key={index + image}>
+              //   <ListItemText primary={project} secondary={technologies} />
+              // </ListItem>
+              <Grid item>
+                <ProjectCard
+                  key={index + image}
+                  project={project}
+                  description={description}
+                  technologies={technologies}
+                  image={image}
+                  githubFrontend={githubFrontend}
+                  githubBackend={githubBackend}
+                  deployment={deployment}
+                />
+              </Grid>
+            )
+          )}
         </Grid>
       </Box>
     </>
   );
 }
-
-const projects = [
-  {
-    project: "Pet adoption site (frontend)",
-    technologies: "React",
-    description: "",
-    image: "../pet-adoption.png",
-    github: "https://www.github.com",
-    frontend: "https://www.github.com",
-    backend: "https://www.github.com",
-  },
-  {
-    project: "Pet adoption site (backend)",
-    technologies: `NodeJS, SQL`,
-    description: "",
-    image: "../pet-adoption.png",
-    github: "https://www.github.com",
-    frontend: "https://www.github.com",
-    backend: "https://www.github.com",
-  },
-  {
-    project: "Pet adoption site (frontend)",
-    technologies: "React",
-    description: "",
-    image: "../pet-adoption.png",
-    github: "https://www.github.com",
-    frontend: "https://www.github.com",
-    backend: "https://www.github.com",
-  },
-  {
-    project: "Pet adoption site (backend)",
-    technologies: `NodeJS, SQL`,
-    description: "",
-    image: "../pet-adoption.png",
-    github: "https://www.github.com",
-    frontend: "https://www.github.com",
-    backend: "https://www.github.com",
-  },
-  {
-    project: "Pet adoption site (frontend)",
-    technologies: "React",
-    description: "",
-    image: "../pet-adoption.png",
-    github: "https://www.github.com",
-    frontend: "https://www.github.com",
-    backend: "https://www.github.com",
-  },
-  {
-    project: "Pet adoption site (backend)",
-    technologies: `NodeJS, SQL`,
-    description: "",
-    image: "../pet-adoption.png",
-    github: "https://www.github.com",
-    frontend: "https://www.github.com",
-    backend: "https://www.github.com",
-  },
-];
 
 export default Portfolio;

@@ -1,9 +1,5 @@
 import * as React from "react";
-import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import Box from "@mui/material/Box";
-import { alpha } from "@mui/material/styles";
-import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 import { motion } from "framer-motion";
 import { useHistory } from "react-router-dom";
@@ -14,7 +10,6 @@ const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(0),
   margin: "auto",
   textAlign: "center",
-
   color: theme.palette.text.secondary,
   // height: "100%",
   lineHeight: "60px",
@@ -48,7 +43,6 @@ export default function About(props) {
       backgroundSize: backgroundSize,
       zIndex: -0,
     },
-
     contentbox: {
       // height: "40vh",
       // width: "30em",
@@ -60,7 +54,6 @@ export default function About(props) {
       paddingRight: "5vw",
       textAlign: "left",
     },
-
     content: {
       // textShadow: "white 0px 0px 10px",
       background: "rgba(33, 33, 33, .8)",
@@ -77,13 +70,7 @@ export default function About(props) {
     // <ThemeProvider theme={darkTheme}>
     <>
       <div style={styles.header}></div>
-
       <div style={styles.contentbox}>
-        {/* <motion.div
-          className="site-hero"
-          initial="initial"
-          animate="animate"
-          exit="exit"> */}
         <motion.div
           animate={{ opacity: [0, 1, 1], y: [150, 0] }}
           transition={{ ease: "easeOut", duration: 1 }}
@@ -96,13 +83,6 @@ export default function About(props) {
           style={styles.content}>
           My name is Elisha Avior.
         </motion.div>
-
-        {/* <motion.div
-          animate={{ opacity: [0, 1], y: [150, 0] }}
-          transition={{ ease: "easeOut", duration: 4 }}
-          style={styles.content}>
-          I am a full-stack developer.
-        </motion.div> */}
         <motion.div
           animate={{ opacity: [0, 1], y: [250, 0] }}
           transition={{ ease: "easeOut", duration: 3 }}
@@ -117,30 +97,7 @@ export default function About(props) {
             <DesktopNavigation indicator={"about"} />
           </motion.div>
         )}
-        {/* </motion.div> */}
       </div>
-
-      {/* <div style={styles.contentbox}>
-        <motion.div animate={{ opacity: [0, 1, 1, 1, 1] }}>
-          <span style={styles.content}>Hello!</span>
-        </motion.div>
-
-        <br />
-        <motion.div animate={{ opacity: [0, 0, 1, 1, 1] }}>
-          <span style={styles.content}>My name is Elisha Avior.</span>
-        </motion.div>
-
-        <br />
-        <motion.div animate={{ opacity: [0, 0, 0, 1, 1] }}>
-          <span style={styles.content}>I am a full-stack web developer.</span>
-        </motion.div>
-        <motion.div animate={{ opacity: [0, 0, 0, 0, 1] }}>
-          <p style={styles.content}>
-            I create websites and web applications, using HTML, CSS, Javascript,
-            React, NextJS and NodeJS.
-          </p>
-        </motion.div>
-      </div> */}
     </>
     // </ThemeProvider>
   );

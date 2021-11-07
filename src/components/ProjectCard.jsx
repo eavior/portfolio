@@ -2,9 +2,21 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import { alpha } from "@mui/material/styles";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
+import { Icon } from "@iconify/react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+const preventDefault = (event) => event.preventDefault();
 
 export default function ProjectCard(props) {
-  const { project, technologies, image } = props;
+  const {
+    project,
+    description,
+    technologies,
+    image,
+    githubFrontend,
+    githubBackend,
+    deployment,
+  } = props;
   return (
     <Box
       sx={{
@@ -14,38 +26,57 @@ export default function ProjectCard(props) {
         bgcolor: "background.paper",
         overflow: "hidden",
         borderRadius: "12px",
-        boxShadow: 1,
+        boxShadow: 10,
         fontWeight: "bold",
       }}>
       <Box
         component="img"
         sx={{
-          height: 233,
+          objectFit: "cover",
+          height: 233, // 100% ?
           width: 350,
-          maxHeight: { xs: 233, md: 167 },
-          maxWidth: { xs: 350, md: 250 },
+          maxHeight: { xs: 200, sm: 233, md: 267 }, // original md: 167
+          maxWidth: { xs: 300, sm: 350, md: 350 }, // original md: 250
         }}
-        alt="The house from the offer."
+        alt="Project's image"
         src={image}
       />
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
-          alignItems: { xs: "center", md: "flex-start" },
+          alignItems: { xs: "center", sm: "center", md: "flex-start" },
           m: 3,
-          minWidth: { md: 350 },
+          minWidth: { xs: 250, sm: 300, md: 450 },
+          maxWidth: { xs: 250, sm: 300, md: 450 },
         }}>
-        <Box component="span" sx={{ fontSize: 16, mt: 1 }}>
+        <Box component="span" sx={{ color: "primary.main", fontSize: 22 }}>
           {project}
         </Box>
-        <Box component="span" sx={{ color: "primary.main", fontSize: 22 }}>
-          {technologies}
+        <Box
+          component="span"
+          sx={{
+            fontSize: 16,
+            mt: 1,
+            fontWeight: "normal",
+            textAlign: { xs: "center", sm: "center", md: "left" },
+          }}>
+          {description}
         </Box>
         <Box
+          component="span"
           sx={{
-            mt: 1.5,
-            p: 0.5,
+            fontSize: 14,
+            mt: 1,
+            textAlign: { xs: "center", sm: "center", md: "left" },
+          }}>
+          Built with {technologies}.
+        </Box>
+
+        <Box
+          sx={{
+            mt: 1,
+            p: "0.5em 1em 0.5em 1em",
             backgroundColor: (theme) => alpha(theme.palette.primary.main, 0.1),
             borderRadius: "5px",
             color: "primary.main",
@@ -55,11 +86,39 @@ export default function ProjectCard(props) {
             alignItems: "center",
             "& svg": {
               fontSize: 21,
-              mr: 0.5,
+              mr: 1,
             },
-          }}>
-          <ErrorOutlineIcon />
-          CONFIDENCE SCORE 85%
+            // typography: "body1",
+            // "& > :not(style) + :not(style)": {
+            //   ml: 2,
+            // },
+          }}
+          // onClick={preventDefault}
+        >
+          <Icon icon="ci:external-link" />
+          <Link
+            to={{ pathname: deployment }}
+            target="_blank"
+            style={{ textDecoration: "none", color: "#1976d2" }}
+            rel="noopener">
+            {deployment && "Site"}
+          </Link>
+          {deployment && githubFrontend && "\u00A0 | \u00A0"}
+          <Link
+            to={{ pathname: githubFrontend }}
+            target="_blank"
+            style={{ textDecoration: "none", color: "#1976d2" }}
+            rel="noopener">
+            {githubFrontend && "Frontend"}
+          </Link>
+          {githubFrontend && githubBackend && "\u00A0 | \u00A0"}
+          <Link
+            to={{ pathname: githubBackend }}
+            target="_blank"
+            style={{ textDecoration: "none", color: "#1976d2" }}
+            rel="noopener">
+            {githubBackend && "Backend"}
+          </Link>
         </Box>
       </Box>
     </Box>
