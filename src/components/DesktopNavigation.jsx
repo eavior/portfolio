@@ -1,14 +1,14 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
+// import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import PhoneIcon from "@mui/icons-material/Phone";
+// import PhoneIcon from "@mui/icons-material/Phone";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import InfoIcon from "@mui/icons-material/Info";
 import ContactPageIcon from "@mui/icons-material/ContactPage";
-import PersonPinIcon from "@mui/icons-material/PersonPin";
+// import PersonPinIcon from "@mui/icons-material/PersonPin";
 import { withStyles } from "@material-ui/core/styles";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function DesktopNavigation(props) {
@@ -29,7 +29,7 @@ export default function DesktopNavigation(props) {
   const styles = {
     navigation: {
       position: "fixed",
-      top: indicator === "about" ? "50%" : "5%",
+      top: indicator === "about" ? "30%" : "7%",
       right: matches && indicator === "about" ? "null" : 0,
       left:
         matches && indicator === "about"

@@ -1,11 +1,11 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import { alpha } from "@mui/material/styles";
-import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
+// import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import { Icon } from "@iconify/react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const preventDefault = (event) => event.preventDefault();
+// const preventDefault = (event) => event.preventDefault();
 
 export default function ProjectCard(props) {
   const {

@@ -1,12 +1,12 @@
 import * as React from "react";
-import CssBaseline from "@mui/material/CssBaseline";
+// import CssBaseline from "@mui/material/CssBaseline";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import InfoIcon from "@mui/icons-material/Info";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ContactPageIcon from "@mui/icons-material/ContactPage";
 import Paper from "@mui/material/Paper";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import { Link } from "react-router-dom";
 
 export default function MobileNavigation() {

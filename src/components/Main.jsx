@@ -1,23 +1,23 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+// import CssBaseline from "@mui/material/CssBaseline";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Portfolio from "./Portfolio";
 import About from "./About";
 import Contact from "./Contact";
 import MobileNavigation from "./MobileNavigation";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useState, useEffect, useRef } from "react";
+import { createTheme } from "@mui/material/styles";
+import { useRef } from "react";
 import DesktopNavigation from "./DesktopNavigation";
 
 // https://mui.com/customization/default-theme/?expand-path=$.palette
 const darkTheme = createTheme({ palette: { mode: "dark" } });
-const lightTheme = createTheme({ palette: { mode: "light" } });
+// const lightTheme = createTheme({ palette: { mode: "light" } });
 const theme = darkTheme;
 
 export default function Main(props) {
   const { mobile } = props;
-  const [value, setValue] = useState(0);
+  // const [value, setValue] = useState(0);
   const ref = useRef(null);
 
   // useEffect(() => {
