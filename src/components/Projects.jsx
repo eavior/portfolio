@@ -15,7 +15,7 @@ const Projects = [
   {
     id: 2,
     project: "Pet adoption site",
-    technologies: "React, Bootstrap, NodeJS with Express and MySQL ",
+    technologies: "React, Bootstrap, NodeJS with Express and MySQL",
     description:
       "Pet adoption site. Users can register, search pets and foster or adopt them.",
     image: "../project-pet-adoption.png",

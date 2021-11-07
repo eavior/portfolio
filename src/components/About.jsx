@@ -25,7 +25,6 @@ export default function About(props) {
   const { mobile } = props;
   const history = useHistory();
 
-  console.log(mobile);
   const backgroundSize = mobile ? "cover" : "100vh";
 
   const styles = {
@@ -88,7 +87,7 @@ export default function About(props) {
           transition={{ ease: "easeOut", duration: 3 }}
           style={styles.content}>
           As a FULL STACK DEVELOPER, I create websites and web applications,
-          using HTML, CSS, Javascript, React, NextJS and NodeJS.
+          using HTML, CSS, Javascript, React and NodeJS.
         </motion.div>
         {!mobile && (
           <motion.div
