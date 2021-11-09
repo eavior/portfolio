@@ -1,41 +1,18 @@
-import * as React from "react";
-// import Paper from "@mui/material/Paper";
-// import { createTheme, styled } from "@mui/material/styles";
 import { motion } from "framer-motion";
-// import { useHistory } from "react-router-dom";
 import DesktopNavigation from "./DesktopNavigation";
-
-// const Item = styled(Paper)(({ theme }) => ({
-//   ...theme.typography.body2,
-//   padding: theme.spacing(0),
-//   margin: "auto",
-//   textAlign: "center",
-//   color: theme.palette.text.secondary,
-//   // height: "100%",
-//   lineHeight: "60px",
-//   width: "75%",
-// }));
-
-// const darkTheme = createTheme({ palette: { mode: "dark" } });
-// const lightTheme = createTheme({ palette: { mode: "light" } });
 
 const background = "../elisha-avior2.png";
 
 export default function About(props) {
   const { mobile } = props;
-  // const history = useHistory();
-
   const backgroundSize = mobile ? "cover" : "100vh";
 
   const styles = {
     header: {
-      // backgroundImage: `url(${background})`,
-      // background: `-webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0)), url(${background})`,
       background: `-webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(0, 34, 255, 0.6), rgba(0, 0, 0, 0.8)), url(${background})`,
       backgroundImage: `url(${background})`,
       width: "100vw",
       height: "100vh",
-      // backgroundColor: "rgba(0, 0, 0, 1)",
       backgroundOpacity: 0.5,
       backgroundPosition: "left top",
       backgroundRepeat: "no-repeat",
@@ -43,9 +20,6 @@ export default function About(props) {
       zIndex: -0,
     },
     contentbox: {
-      // height: "40vh",
-      // width: "30em",
-      // backgroundColor: "rgba(0, 0, 0, 0.5)",
       position: "fixed",
       bottom: "0vh",
       paddingBottom: mobile ? "10vh" : "1vh",
@@ -54,19 +28,16 @@ export default function About(props) {
       textAlign: "left",
     },
     content: {
-      // textShadow: "white 0px 0px 10px",
       background: "rgba(33, 33, 33, .8)",
       color: "white",
       marginBottom: "5px",
       padding: "10px",
       borderRadius: "10px",
       display: "table",
-      // transform: "translate(-50%, -50%)",
     },
   };
 
   return (
-    // <ThemeProvider theme={darkTheme}>
     <>
       <div style={styles.header}></div>
       <div style={styles.contentbox}>
@@ -92,6 +63,5 @@ export default function About(props) {
         {!mobile && <DesktopNavigation indicator={"about"} />}
       </div>
     </>
-    // </ThemeProvider>
   );
 }

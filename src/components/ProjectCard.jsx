@@ -1,11 +1,7 @@
-import * as React from "react";
 import Box from "@mui/material/Box";
 import { alpha } from "@mui/material/styles";
-// import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
-
-// const preventDefault = (event) => event.preventDefault();
 
 export default function ProjectCard(props) {
   const {
@@ -88,13 +84,7 @@ export default function ProjectCard(props) {
               fontSize: 21,
               mr: 1,
             },
-            // typography: "body1",
-            // "& > :not(style) + :not(style)": {
-            //   ml: 2,
-            // },
-          }}
-          // onClick={preventDefault}
-        >
+          }}>
           <Icon icon="ci:external-link" />
           <Link
             to={{ pathname: deployment }}

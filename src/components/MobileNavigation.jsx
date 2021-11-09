@@ -1,5 +1,3 @@
-import * as React from "react";
-// import CssBaseline from "@mui/material/CssBaseline";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import InfoIcon from "@mui/icons-material/Info";
@@ -7,15 +5,10 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ContactPageIcon from "@mui/icons-material/ContactPage";
 import Paper from "@mui/material/Paper";
 import { Link } from "react-router-dom";
-// import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function MobileNavigation() {
-  const [value, setValue] = React.useState(0);
-  // const ref = React.useRef(null);
-
-  React.useEffect(() => {
-    // ref.current.ownerDocument.body.scrollTop = 0;
-  }, [value]);
+  const [value, setValue] = useState(0);
 
   return (
     <Paper
