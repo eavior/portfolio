@@ -28,7 +28,6 @@ export default function ProjectCard(props) {
       <Box
         component="img"
         sx={{
-          objectFit: "cover",
           height: 233, // 100% ?
           width: 350,
           maxHeight: { xs: 200, sm: 233, md: 267 }, // original md: 167
