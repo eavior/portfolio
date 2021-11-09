@@ -1,7 +1,12 @@
 import "./App.css";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Box from "@mui/material/Box";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import Portfolio from "./components/Portfolio";
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -28,31 +33,34 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Router>
-          <Box
-            sx={{
-              height: "100%",
-            }}>
-            <Route exact path="/">
-              <About theme={theme} mobile={mobile} />
-              {mobile && <MobileNavigation />}
-            </Route>
-            <Route path="/about">
-              <About theme={theme} mobile={mobile} />
-              {mobile && <MobileNavigation />}
-            </Route>
-            <Route path="/portfolio">
-              <Portfolio theme={theme} />
-              {mobile && <MobileNavigation />}
-              {!mobile && <DesktopNavigation indicator={"portfolio"} />}
-            </Route>
-            <Route path="/contact">
-              <Contact theme={theme} />
-              {mobile && <MobileNavigation />}
-              {!mobile && <DesktopNavigation indicator={"contact"} />}
-            </Route>
-          </Box>
-        </Router>
+        <Box
+          sx={{
+            height: "100%",
+          }}>
+          <Router>
+            <Switch>
+              <Route exact path="/">
+                <About theme={theme} mobile={mobile} />
+                {mobile && <MobileNavigation />}
+              </Route>
+              <Route path="/about">
+                <About theme={theme} mobile={mobile} />
+                {mobile && <MobileNavigation />}
+              </Route>
+              <Route path="/portfolio">
+                <Portfolio theme={theme} />
+                {mobile && <MobileNavigation />}
+                {!mobile && <DesktopNavigation indicator={"portfolio"} />}
+              </Route>
+              <Route path="/contact">
+                <Contact theme={theme} />
+                {mobile && <MobileNavigation />}
+                {!mobile && <DesktopNavigation indicator={"contact"} />}
+              </Route>
+              <Redirect to="/" />
+            </Switch>
+          </Router>
+        </Box>
       </header>
     </div>
   );
